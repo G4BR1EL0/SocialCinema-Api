@@ -29,8 +29,6 @@ app.use('/valoration', valorationRoutes);
 app.use('/user', userRoutes); 
 app.use('/movies', movieRoutes);
 
-const host = process.env.HOST || '0.0.0.0';
-const port = process.env.PORT || 3000;
-app.listen(port, host, () => {
+app.listen(process.env.PORT, () => {
     console.log(`web server running on port ${process.env.PUERTO}`);
 });

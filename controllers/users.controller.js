@@ -34,7 +34,7 @@ export const userController = {
     
             res.json({respuesta});
         } catch (error) {
-            res.json({error});
+            res.json({error:req.body});
             console.log(error);
         }
     },
