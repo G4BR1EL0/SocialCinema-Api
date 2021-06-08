@@ -10,7 +10,6 @@ export const userController = {
     },
     login: async (req,res) => {
         try {
-            console.log(req.body)
             let respuesta = await User.findOne({$and: [{'email':req.body.email},
                                                     {'password':req.body.password}]}).lean();
             console.log(respuesta)
@@ -29,13 +28,11 @@ export const userController = {
     },
     create: async (req,res) => {
         try {
-            console.log(req.body)
             let respuesta = await User.create(req.body);
     
             res.json({respuesta});
-        } catch (error) {
-            res.json({error:req.body});
-            console.log(error);
+        } catch (err) {
+            res.json({error:err});
         }
     },
     delete: async (req,res) => {
