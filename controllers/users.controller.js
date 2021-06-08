@@ -20,7 +20,7 @@ export const userController = {
                 res.json({"token":token,"user":respuesta});
                 return 
             }
-            res.json({error:"Datos incorrectos"});
+            res.json({error:"Datos incorrectos", response:respuesta});
         } catch (error) {
             console.log(error);            
             res.send(error);
